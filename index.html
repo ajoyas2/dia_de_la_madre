@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feliz Día de la Madre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Corazones flotantes de fondo -->
+  <div class="hearts-bg" id="heartsBg"></div>
+
+  <!-- Botón de sonido -->
+  <button class="sound-btn" id="soundBtn" onclick="toggleSound()" title="Sonido">
+    <svg id="iconOn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+    <svg id="iconOff" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+  </button>
+
+  <main class="wrapper">
+
+    <!-- ══════════════════════════════
+         CABECERA
+    ══════════════════════════════ -->
+    <header class="site-header">
+      <p class="header-deco">♡ &nbsp; ♡ &nbsp; ♡</p>
+      <h1 class="header-title">Feliz día de la Madre</h1>
+      <p class="header-deco">♡ &nbsp; ♡ &nbsp; ♡</p>
+      <h2 class="header-sub">Tía Carmen y Tía Elsa</h2>
+      <div class="header-divider">
+        <span></span><span class="divider-heart">♥</span><span></span>
+      </div>
+    </header>
+
+    <!-- ══════════════════════════════
+         PANTALLA 1 — CAJA CERRADA
+    ══════════════════════════════ -->
+    <section class="screen active" id="screenGift">
+
+      <div class="gift-scene" id="giftScene" onclick="openBox()" role="button" tabindex="0" aria-label="Abrir regalo">
+
+        <!-- Lazo / moño -->
+        <div class="bow-wrap">
+          <div class="bow-left"></div>
+          <div class="bow-knot"></div>
+          <div class="bow-right"></div>
+        </div>
+
+        <!-- Tapa -->
+        <div class="gift-lid" id="giftLid">
+          <div class="lid-ribbon-h"></div>
+        </div>
+
+        <!-- Cuerpo de la caja -->
+        <div class="gift-body">
+          <div class="body-ribbon-v"></div>
+          <div class="body-ribbon-h"></div>
+          <div class="gift-tag">
+            <div class="gift-tag-border">
+              <span>Para<br>Mamá</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /gift-scene -->
+
+      <p class="hint-text">
+        <span class="hint-icon">👆</span>
+        Haz clic en el regalo para abrirlo
+      </p>
+
+    </section><!-- /screenGift -->
+
+    <!-- ══════════════════════════════
+         PANTALLA 2 — CAJA ABIERTA + CHOCOLATES
+    ══════════════════════════════ -->
+    <section class="screen" id="screenChoc">
+
+      <!-- Tapa abierta -->
+      <div class="open-lid-wrap">
+        <div class="open-lid">
+          <div class="lid-ribbon-h"></div>
+          <!-- moño pequeño -->
+          <div class="bow-wrap small">
+            <div class="bow-left"></div>
+            <div class="bow-knot"></div>
+            <div class="bow-right"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bandeja de chocolates -->
+      <div class="choc-tray" id="chocTray">
+
+        <div class="choc-cell" id="cell0" onclick="openChoc(0)" role="button" tabindex="0" aria-label="Chocolate 1">
+          <div class="choc-inner">
+            <!-- Trufa redonda blanca con espiral -->
+            <svg viewBox="0 0 90 90" class="choc-svg">
+              <ellipse cx="45" cy="72" rx="30" ry="7" fill="#1a0800" opacity=".25"/>
+              <!-- base cilíndrica -->
+              <ellipse cx="45" cy="64" rx="28" ry="9" fill="#d4b896"/>
+              <rect x="17" y="38" width="56" height="28" rx="3" fill="#e8d0b0"/>
+              <!-- parte superior -->
+              <ellipse cx="45" cy="38" rx="28" ry="10" fill="#f0dfc0"/>
+              <!-- espiral caramelo -->
+              <path d="M45 32 Q52 30 54 36 Q56 42 50 46 Q44 50 38 46 Q32 42 34 36 Q36 30 43 30" stroke="#b8860b" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+              <path d="M45 34 Q50 33 51 38 Q52 43 47 46 Q42 48 38 45 Q34 42 36 37 Q38 32 44 32" stroke="#d4a017" stroke-width="1.2" fill="none" stroke-linecap="round" opacity=".5"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="choc-cell" id="cell1" onclick="openChoc(1)" role="button" tabindex="0" aria-label="Chocolate 2">
+          <div class="choc-inner">
+            <!-- Trufa esférica blanca con espirales -->
+            <svg viewBox="0 0 90 90" class="choc-svg">
+              <ellipse cx="45" cy="76" rx="28" ry="6" fill="#1a0800" opacity=".22"/>
+              <ellipse cx="45" cy="48" rx="28" ry="28" fill="#f5f0e8"/>
+              <ellipse cx="45" cy="44" rx="24" ry="24" fill="#ede6d8"/>
+              <!-- espiral triple -->
+              <path d="M34 44 Q38 30 45 28 Q52 30 56 44" stroke="#c8a050" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <path d="M37 47 Q40 36 45 34 Q50 36 53 47" stroke="#c8a050" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+              <path d="M40 50 Q42 42 45 40 Q48 42 50 50" stroke="#c8a050" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+              <!-- línea lateral -->
+              <path d="M17 48 Q20 46 23 48" stroke="#c8a050" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+              <path d="M67 48 Q70 46 73 48" stroke="#c8a050" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="choc-cell" id="cell2" onclick="openChoc(2)" role="button" tabindex="0" aria-label="Chocolate 3">
+          <div class="choc-inner">
+            <!-- Trufa aplanada blanca con espiral de mantequilla -->
+            <svg viewBox="0 0 90 90" class="choc-svg">
+              <ellipse cx="45" cy="72" rx="32" ry="7" fill="#1a0800" opacity=".22"/>
+              <ellipse cx="45" cy="60" rx="32" ry="12" fill="#d4c4a0"/>
+              <ellipse cx="45" cy="52" rx="32" ry="18" fill="#f0e6cc"/>
+              <ellipse cx="45" cy="48" rx="28" ry="15" fill="#ede0c0"/>
+              <!-- espiral mantequilla doble -->
+              <path d="M28 50 Q32 38 45 36 Q58 38 62 50 Q58 62 45 64 Q32 62 28 50Z" stroke="#c8a050" stroke-width="2" fill="none"/>
+              <path d="M33 50 Q36 41 45 39 Q54 41 57 50 Q54 59 45 61 Q36 59 33 50Z" stroke="#d4b060" stroke-width="1.2" fill="none" opacity=".6"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="choc-cell" id="cell3" onclick="openChoc(3)" role="button" tabindex="0" aria-label="Chocolate 4">
+          <div class="choc-inner">
+            <!-- Trufa oscura con glaseado rosa -->
+            <svg viewBox="0 0 90 90" class="choc-svg">
+              <ellipse cx="45" cy="74" rx="24" ry="6" fill="#1a0800" opacity=".28"/>
+              <!-- cápsula de papel -->
+              <ellipse cx="45" cy="65" rx="24" ry="8" fill="#3d1c02"/>
+              <path d="M21 65 L21 55 Q21 47 45 47 Q69 47 69 55 L69 65Z" fill="#4a2208"/>
+              <!-- cuerpo chocolate -->
+              <ellipse cx="45" cy="55" rx="24" ry="14" fill="#5c2d0a"/>
+              <ellipse cx="45" cy="50" rx="22" ry="12" fill="#6e3510"/>
+              <!-- glaseado rosa derretido -->
+              <path d="M26 50 Q30 42 45 40 Q60 42 64 50 Q62 50 60 52 Q56 46 45 44 Q34 46 30 52 Q28 50 26 50Z" fill="#f472b6" opacity=".9"/>
+              <path d="M28 52 Q32 48 45 46 Q58 48 62 52 Q60 54 58 54 Q54 50 45 48 Q36 50 32 54 Q30 54 28 52Z" fill="#f9a8d4" opacity=".7"/>
+              <!-- sprinkles -->
+              <circle cx="36" cy="43" r="2.2" fill="#fce7f3"/>
+              <circle cx="45" cy="40" r="2.8" fill="#f472b6"/>
+              <circle cx="54" cy="43" r="2" fill="#fce7f3"/>
+              <circle cx="40" cy="46" r="1.8" fill="#fbcfe8"/>
+              <circle cx="50" cy="46" r="1.8" fill="#fbcfe8"/>
+            </svg>
+          </div>
+        </div>
+
+      </div><!-- /choc-tray -->
+
+      <p class="hint-choc">
+        Haz clic en cada chocolate &nbsp;<span>❤️</span>
+      </p>
+
+      <!-- Mensaje de completado -->
+      <div class="completion" id="completion">
+        <div class="completion-flowers">🌸 &nbsp; 🌷 &nbsp; 🌸</div>
+        <p class="completion-title">¡Con cariño!</p>
+        <p class="completion-sub">Su sobrino que las quieren mucho 💕</p>
+      </div>
+
+    </section><!-- /screenChoc -->
+
+  </main><!-- /wrapper -->
+
+  <!-- ══════════════════════════════
+       MODAL — TARJETA DE MENSAJE
+  ══════════════════════════════ -->
+  <div class="modal-bg" id="modalBg" onclick="handleOverlayClick(event)">
+    <article class="modal-card" id="modalCard">
+
+      <div class="modal-flowers" id="modalFlowers">🌸 🌺 🌸</div>
+
+      <h3 class="modal-title" id="modalTitle">Mi lugar favorito</h3>
+
+      <!-- Ilustración SVG inline (se reemplaza por JS) -->
+      <div class="modal-illus" id="modalIllus"></div>
+
+      <!-- Badge Best Mom -->
+      <div class="best-mom">
+        <div class="bm-heart">❤️</div>
+        <span>BEST</span>
+        <span>MOM</span>
+      </div>
+
+      <p class="modal-msg" id="modalMsg"></p>
+
+      <button class="modal-close" onclick="closeModal()">Cerrar &nbsp;💌</button>
+
+    </article>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
