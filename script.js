@@ -351,4 +351,14 @@ function checkCompletion() {
     launchConfetti(55);
     playCompleteSound();
   }, 500);
+  
+}
+const musica = document.getElementById("musica");
+
+function toggleSound() {
+    if (musica.paused) {
+        musica.play();
+    } else {
+        musica.pause();
+    }
 }
